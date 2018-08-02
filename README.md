@@ -37,12 +37,12 @@ something like Bob for the time DONT
 \
 End Time (hh:mm, 24-hr): //note: you do not need to have a 0 before a single digit hour for example 09:00 == 9:00 also if //you enter
 something like Bob for the time DONT
+\
 //Also defualt opeining and closing times are 00:00 - 24:00 if you do something like 
-#
-//Start Time (hh:mm, 24-hr): 24:00
-#
-//End Time (hh:mm, 24-hr): 25:00 
-#
+\
+Start Time (hh:mm, 24-hr): 24:00
+End Time (hh:mm, 24-hr): 25:00 
+\
 //the reservation will be successful becuase there is no checking to see if the time passed is within the bounds of opening and closing
 times this is something you have to make sure of
 
