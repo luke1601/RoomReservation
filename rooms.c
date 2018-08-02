@@ -1,54 +1,17 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h> 
+#include <stdlib.h> 
 #include <string.h>
 #include "rooms.h"
  
 /* rooms- program to create the rooms
  * Once rooms are created each room has a scheule within itself,
  * The functions present here essentially call the functions in schedule to do
- * the work of reserving and etc. The catch is in rooms.c you have to worry about 
- * open and close times passed in main() and have to handle that properly in the functions below.
+ * the work of reserving and etc. 
  * Mounark Patel, November 2017
  */
 
 Schedule *Room; //global 
 static int Nrooms; //global version of nrooms 
-
-//This function compares two starting times, starting time
-//of idle list and starting time for busy list in that order
-//return 1 if start1 is less than start2
-//return 0 if start1 is more than start2
-//return -1 the times are exactly equal 
-int less(Time start1, Time start2)
-{
-    //times from 0 - 23
-    //check hours first
-    if(start1.hr < start2.hr)
-    {
-        return 1; //hour is less meaning time has to be less no matter 
-    }
-    else if(start1.hr > start2.hr)
-    {
-        return 0; //return 0 cause its greater
-    }
-    else if(start1.hr == start2.hr) //when they are equal you gotta use minutes
-    {
-        if(start1.min < start2.min) 
-        {
-            return 1; //minute is less meaning time has to be less
-        }
-        else if(start1.min > start2.min)
-        {
-            return 0; //return 0 cause its greater
-        }
-        else
-        {
-            return -1;
-        }
-    }
-    return -1;
-}
 
 
 void setupRooms(int nrooms, Time open, Time close)
@@ -80,15 +43,11 @@ int makeReservation(const char* name, Time start, Time end)
     int i;
     for(i = 1; i <= Nrooms; i++) //for all rooms
     {
-      if(less(start, Room[i] -> start) == 0) //check if start starts earlier than opening time of Room
+      if(reserve(Room[i], name, start, end) == 0) //check if reservation is possible
       {
-          continue; //if it does pass by this room as this room number should not be returned
+        continue; //return the room number
       }
-      else if(less(end, Room[i] -> end) == 0) //check if end ends later than the closing time of Room
-      {
-          continue; //if it does pass by this room as this room number should not be returned
-      }        
-      if(reserve(Room[i], name, start, end) == 1) //check if reservation is possible
+      else //check if reservation is possible
       {
         return i; //return the room number
       }
@@ -114,7 +73,7 @@ int cancelReservation(int room, const char* name, Time start)
  * specified owner, NULL (empty list) if no reservations */
 struct rNode * findReservations(const char * name)
 {
-    int i = 1; 
+    int i; 
     struct rNode * head; //pointer will always point to the head of the list I return this pointer 
     head = NULL; //head is initially NULL as there are originally none with a certain owner
     struct rNode * tail; //will use to create the linkages with each malloced node 
@@ -192,4 +151,3 @@ void printRoomSchedules(FILE* stream)
         printSchedule(Room[i], stream); 
     }        
 }
-
