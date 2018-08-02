@@ -25,9 +25,10 @@
 int main() 
 {
     
-    /* open and close able to change*/
-    Time open = {7, 0};   /* 7am */
-    Time close = {21, 0}; /* 9pm */
+    /* rooms are typically avialable 24 hours a day */
+    /* available to change however there is no error checking */
+    Time open = {0, 0};   
+    Time close = {24, 0}; 
     
     int nrooms = 0;
     char command[2];  /* one-letter command */
