@@ -24,11 +24,8 @@ To run...
 5. ./Program
 # User interface and error handling
 How many rooms?
-#
-Enter command (r,x,s,f,q): r 
-#
+Enter command (r,x,s,q): r 
 === MAKE RESERVATION ===
-#
 Enter name (one word): //There is a chunk of code that makes sure name does not exceed 20 chars the 20 chars can be comprimised of 
 #
 //chars that are not letters so no ERROR checking for the actual characters
@@ -48,17 +45,7 @@ End Time (hh:mm, 24-hr): //note: you do not need to have a 0 before a single dig
 //End Time (hh:mm, 24-hr): 25:00 
 #
 //the reservation will be successful becuase there is no checking to see if the time passed is within the bounds of opening and closing
-#
 times this is something you have to make sure of
-#
-Enter command (r,x,s,f,q): f
-#
-=== FIND RESERVATIONS ===
-#
-Enter name (one word): //Whatever name you enter it will take a long time to find all reservations associated with this name depending on
-#
-//the IDE or Text Editor you run it in you may accidently kill it
-
 
 
 
