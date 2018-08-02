@@ -1,7 +1,5 @@
-
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h> 
+#include <stdlib.h> 
 #include <string.h> 
 #include "schedule.h"
 
@@ -9,16 +7,6 @@
  * busy, reserve a specific time for the schedule, cancel a time in schedule,
  * and print the schedule
  * Usage: schedule
- * The function Schedule createSchedule(Time start, Time end) create a schedle
- * according to the starting and ending times given.
- * The function int isBusy(Schedule s, Time start, Time end) checks whether a 
- * desired period of time is available.
- * The function int reserve(Schedule s, const char *name, Time start, Time end)  
- * reserves a particular time interval if it is busy
- * The function int cancel(Schedule s, const char *name, Time start) frees up previusly 
- * contingious idle intervals and merges contingious intervals
- * The function void printSchedule(Schedule s, FILE* stream) prints all free and 
- * busy intervals to specified stream
  * Mounark Patel, November 2017
  */
  
@@ -148,12 +136,10 @@ int isBusy(Schedule s, Time start, Time end)
 /* return 1 if success, 0 if could not reserve */
 int reserve(Schedule s, const char *name, Time start, Time end)
 {
-    //Test and start and end times are within schedule start and end times
     if(isBusy(s, start, end) == 1) //check if the time is already busy
     {
         return 0; 
     }
-
     
     struct iNode* it; 
     it = s -> idle; //points to head of idle list 
@@ -286,7 +272,7 @@ int reserve(Schedule s, const char *name, Time start, Time end)
 /* return 1 if success, 0 if matching interval not found */
 int cancel(Schedule s, const char *name, Time start)
 {
-    int bigblack = 0; //to see if matching interval is found, it's default is its not
+    int found = 0; //to see if matching interval is found, it's default is its not
     struct iNode* it; 
     it = s -> busy; //points to head of idle list 
     struct iNode* prev;
@@ -297,12 +283,12 @@ int cancel(Schedule s, const char *name, Time start)
         //if start the interval given matches up with any of the start times in busy
         if(lessThan((it -> interval.start), start) == -1) 
         {
-            bigblack = 1; //bigblack = 1 if there is a possibility that there is a node that needs to be freed
+            found = 1; //bigblack = 1 if there is a possibility that there is a node that needs to be freed
             break;
         }
         it = it -> next; //iterate to next node
     }
-    if(bigblack == 0) //this is the case there was never a match 
+    if(found == 0) //this is the case there was never a match 
     {
         return 0; 
     }
