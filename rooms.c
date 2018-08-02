@@ -69,49 +69,6 @@ int cancelReservation(int room, const char* name, Time start)
     }
 }
 
-/* create and return a list of reservations with the
- * specified owner, NULL (empty list) if no reservations */
-struct rNode * findReservations(const char * name)
-{
-    int i; 
-    struct rNode * head; //pointer will always point to the head of the list I return this pointer 
-    head = NULL; //head is initially NULL as there are originally none with a certain owner
-    struct rNode * tail; //will use to create the linkages with each malloced node 
-    tail = NULL; //initially it will also equal NULL
-    
-    //Outer loop to check all rooms
-    for(i = 1; i <= Nrooms; i++)
-    {
-        struct iNode *it; //to iterate though busy list
-        it = Room[i] -> busy;
-        //inner loop to check the each rooms busy iNode
-        while(it != NULL)
-        {
-            if(strcmp(it -> interval.owner, name) == 0) //if the names match
-            {
-                //create the new node 
-                struct rNode* new; //create a new rNode 
-                new = (struct rNode*)malloc(sizeof(struct rNode)); //malloc it to the size of rNode
-                new -> res.roomNumber = i; //set roomnumber to i 
-                new -> res.interval = &(it -> interval); //set the interval equal to the interval
-                new -> next = NULL; //set the next equal to NULL since its just one node 
-                //case where it is the head of the list always check
-                if(head == NULL)
-                {
-                    head = new; //head is new
-                    tail = new; //tail points to same node
-                }
-                //if not got to use tail to provide linkage to next node
-                else
-                {
-                    tail -> next = new; //points the next of tail to the new 
-                    tail = new; //after this is done tail has to be shifted to new so the next new can be linked
-                }
-            }
-        }
-    }
-    return head;  
-}
 
 /* print reservations from a list, using specified stream */
 void printReservations(const struct rNode* list, FILE* stream)
@@ -133,8 +90,7 @@ void printReservations(const struct rNode* list, FILE* stream)
         fprintf(stream, "%s", Room[i] -> busy -> interval.owner); //BUSY 08:00 - 09:10 JANE
         fprintf(stream, "\n");
         i++;
-    }
-    
+    }   
 }
 
 /* print schedule for every room, using specified stream */
