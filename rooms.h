@@ -40,10 +40,6 @@ int makeReservation(const char* name, Time start, Time end);
 /* return 1 if success, 0 if matching reservation not found */
 int cancelReservation(int room, const char* name, Time start);
 
-/* create and return a list of reservations with the
- * specified owner, NULL (empty list) if no reservations */
-struct rNode * findReservations(const char * name);
-
 /* print reservations from a list, using specified stream */
 void printReservations(const struct rNode* list, FILE* stream);
 
