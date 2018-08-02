@@ -1,10 +1,10 @@
 # RoomReservation
 This program implements a reservation system for booking time in a collection of rooms.  It provides the creation and deletion of reservations (on a single day), and prints information about the overall schedule and the reservations held by a particular person. 
-# Installing GCC compiler for Windows users
+# Installing GCC compiler for windows users
 http://preshing.com/20141108/how-to-install-the-latest-gcc-on-windows/
-# Compiling and Running Multiple Files without GCC
+# Compiling and running multiple files without GCC
 This is for Windows users. https://msdn.microsoft.com/en-us/library/bb384838.aspx
-# Compiling and Running Multiple Files with GCC
+# Compiling and running multiple files with GCC
 After you have downloaded or forked the repository.
 OSX:
 1. Open Terminal 
@@ -22,7 +22,7 @@ Common Steps:
 4. gcc -o Program m r s
 To run...
 5. ./Program
-# User Interface and Error Handeling
+# User interface and error handling
 How many rooms?
 #
 Enter command (r,x,s,f,q): r 
