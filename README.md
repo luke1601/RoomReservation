@@ -24,7 +24,9 @@ To run...
 5. ./Program
 # User interface and error handling
 How many rooms?
+\
 Enter command (r,x,s,q): r 
+\
 === MAKE RESERVATION ===
 Enter name (one word): //There is a chunk of code that makes sure name does not exceed 20 chars the 20 chars can be comprimised of 
 #
