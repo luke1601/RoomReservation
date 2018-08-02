@@ -6,7 +6,6 @@
  * r = create reservation
  * x = cancel reservation
  * s = print complete room schedule
- * f = print all reservations made for a given name
  * q = quit
  */
 
@@ -46,7 +45,7 @@ int main()
     setupRooms(nrooms, open, close);
 
     while (1) {
-        printf("\nEnter command (r,x,s,f,q): ");
+        printf("\nEnter command (r,x,s,q): ");
         fflush(stdout);
          /* why use string for a one-letter command?
          * so we don't have to worry about leading spaces */
@@ -100,21 +99,6 @@ int main()
                 printf("Unable to cancel.\n");
             }
         }
-
-        else if (strcmp(command, "f") == 0) {
-            printf("=== FIND RESERVATIONS ===\n");
-            printf("Enter name (one word): ");
-            fflush(stdout);
-            scanf(STRNAME, name);
-            res_list = findReservations(name);
-            if (res_list) {
-                printReservations(res_list, stdout);
-            }
-            else {
-                printf("No reservations found for %s\n", name);
-            }
-        }
     }
-
     return EXIT_SUCCESS;
 }
