@@ -47,7 +47,7 @@ int makeReservation(const char* name, Time start, Time end)
       {
         continue; //return the room number
       }
-      else //check if reservation is possible
+      else if(reserve(Room[i], name, start, end) == 1) //check if reservation is possible
       {
         return i; //return the room number
       }
