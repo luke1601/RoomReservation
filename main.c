@@ -36,7 +36,7 @@ int main()
     /* temporary variables */
     Time start, end;
     int status, r;
-    struct rNode *res_list = NULL;
+    //struct rNode *res_list = NULL;
 
 
     printf("How many rooms? ");
