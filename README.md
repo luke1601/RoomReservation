@@ -1,31 +1,28 @@
 # RoomReservation
 This program implements a reservation system for booking time in a collection of rooms.  It provides the creation and deletion of reservations (on a single day), and prints information about the overall schedule and the reservations held by a particular person. 
-# Installing GCC compiler for windows users
-http://preshing.com/20141108/how-to-install-the-latest-gcc-on-windows/
-# Compiling and running multiple files without GCC
-This is for Windows users. https://msdn.microsoft.com/en-us/library/bb384838.aspx
-# Compiling and running multiple files with GCC
-After you have downloaded or forked the repository.
-\
-OSX:
+# Windows Compiler
+This is for [Windows](https://msdn.microsoft.com/en-us/library/bb384838.aspx) users.
+# Compiling and running multiple files with clang (OSX preferred way)
+I actually have had empolyers tell me that my code in this repo previously did not work when they compiled it with gcc on the mac.
+I have fixed it, but dont trust gcc on a mac, Apple insits using clang and so do I.
 1. Open Terminal 
 2. cd to the directory where the project is
-#
-Windows:
-1. Open Command Prompt
-2. cd \ to the directory where the project is
-#
-Linux:
-1. Open Terminal
-2. cd ~/ to the directory where the project is
-#
-Common Steps:
-1. gcc -c -Wall -Werror -o m main.c
-2. gcc -c -Wall -Werror -o r rooms.c
-3. gcc -c -Wall -Werror -o s schedule.c
-4. gcc -o Program m r s
+3. clang -c -Wall -Werror -o m main.c
+4. clang -c -Wall -Werror -o r rooms.c
+5. clang -c -Wall -Werror -o s schedule.c
+6. clang -o Program m r s
 To run...
-5. ./Program
+7. ./Program
+# Compiling and running multiple files with GCC (Linux)
+Use gcc on OSX at your risk.
+1. Open Terminal 
+2. cd to the directory where the project is
+3. gcc -c -Wall -Werror -o m main.c
+4. gcc -c -Wall -Werror -o r rooms.c
+5. gcc -c -Wall -Werror -o s schedule.c
+6. gcc -o Program m r s
+To run...
+7. ./Program
 # User interface and error handling
 How many rooms?
 \
