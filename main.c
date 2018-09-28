@@ -24,7 +24,7 @@
 int main() 
 {
     
-    /* open and close able to change*/
+    /*changing open and close does nothing as previously mentioned, convnetion however is rooms are open 24 hrs a day*/
     Time open = {0, 0};   
     Time close = {24, 0}; 
     
