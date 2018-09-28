@@ -11,17 +11,17 @@ I have fixed it, but dont trust gcc on a mac, Apple insits using clang and so do
 4. clang -c -Wall -Werror -o r rooms.c
 5. clang -c -Wall -Werror -o s schedule.c
 6. clang -o Program m r s
-To run...
+~~To run...~~
 7. ./Program
 # Compiling and running multiple files with GCC (Linux)
-Use gcc on OSX at your risk.
+Use gcc on OSX at your own risk.
 1. Open Terminal 
 2. cd to the directory where the project is
 3. gcc -c -Wall -Werror -o m main.c
 4. gcc -c -Wall -Werror -o r rooms.c
 5. gcc -c -Wall -Werror -o s schedule.c
 6. gcc -o Program m r s
-To run...
+~~To run...~~
 7. ./Program
 # User interface and error handling
 How many rooms?
