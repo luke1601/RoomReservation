@@ -3,8 +3,6 @@ This program implements a reservation system for booking time in a collection of
 # Windows Compiler
 This is for [Windows](https://msdn.microsoft.com/en-us/library/bb384838.aspx) users.
 # Compiling and running multiple files with clang (OSX preferred way)
-I actually have had empolyers tell me that my code in this repo previously did not work when they compiled it with gcc on the mac.
-I have fixed it, but dont trust gcc on a mac, Apple insits using clang and so do I.
 1. Open Terminal 
 2. cd to the directory where the project is
 3. clang -c -Wall -Werror -o m main.c
