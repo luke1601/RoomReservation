@@ -2,7 +2,7 @@
 participant 
 KIM HYEON SU
 KIM EYN RYEONG
-CHAE NA YEONG
+CHOI NA YOUNG
 
 #Object
 Our project is make this open source to more realistic so it available for real rime.
