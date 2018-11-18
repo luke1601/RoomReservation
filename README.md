@@ -2,9 +2,13 @@
 participant 
 KIM HYEON SU
 KIM EYN RYEONG
-CHAE
+CHAE NA YEONG
 
-OUR PROJECT IS
+#Object
+Our project is make this open source to more realistic so it available for real rime.
+1.Limit the number of room and number of people who can enter the room.
+2.If you just enter the name, time, and number of people, then the program will automatically place the room according to the number of people
+
 # RoomReservation
 This program implements a reservation system for booking time in a collection of rooms.  It provides the creation and deletion of reservations (on a single day), and prints information about the overall schedule and the reservations held by a particular person. 
 # Windows Compiler
