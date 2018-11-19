@@ -1,13 +1,13 @@
 # Hongik univ. opensource project
 participant 
-KIM HYEON SU,
-KIM EUN RYEONG,
-CHOI NA YOUNG,
+1. KIM HYEON SU,
+2. KIM EUN RYEONG,
+3. CHOI NA YOUNG,
 
 # Object
 Our project is make this open source to more realistic so it available for real time.
-1.Limit the number of room and number of people who can enter the room.
-2.If you just enter the name, time, and number of people, then the program will automatically place the room according to the number of people
+1. Limit the number of room and number of people who can enter the room.
+2. If you just enter the name, time, and number of people, then the program will automatically place the room according to the number of people
 
 # RoomReservation
 This program implements a reservation system for booking time in a collection of rooms.  It provides the creation and deletion of reservations (on a single day), and prints information about the overall schedule and the reservations held by a particular person. 
