@@ -1,5 +1,5 @@
 # Hongik univ. opensource project
-participant 
+Participant 
 1. KIM HYEON SU
 2. KIM EUN RYEONG
 3. CHOI NA YOUNG
