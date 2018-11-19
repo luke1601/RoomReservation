@@ -1,8 +1,8 @@
 # Hongik univ. opensource project
 participant 
-1. KIM HYEON SU,
-2. KIM EUN RYEONG,
-3. CHOI NA YOUNG,
+1. KIM HYEON SU
+2. KIM EUN RYEONG
+3. CHOI NA YOUNG
 
 # Object
 Our project is make this open source to more realistic so it available for real time.
